@@ -101,7 +101,7 @@ class DemoController extends Controller {
         $conn = mysqli_connect("localhost", "root", "ydx970516", "kj");
         mysqli_select_db($conn, "kj") or die("数据库访问错误" . mysql_error());
         mysqli_query($conn, "set names UTF8");
-        $sql = "call ueser (" . $id . ", '" . $username . "', '" . $major . "', " . $email . ", '" . $password . "')";
+        $sql = "call stu_in(" . $id . ", '" . $username . "', '" . $major . "', " . $email . ", '" . $password . "')";
         $result = mysqli_query($conn, $sql);
         if($result) {
             echo "<script>alert('新增成功！');</script>";
@@ -228,7 +228,7 @@ class DemoController extends Controller {
         $conn = mysqli_connect("localhost", "root", "ydx970516", "kj");
         mysqli_select_db($conn, "kj") or die("数据库访问错误" . mysql_error());
         mysqli_query($conn, "set names UTF8");
-        $sql = "insert into teachers values (" . $id . ", '" . $username . "', " . $email . ", '" . $password . "', NULL)";
+        $sql = "call tea_in(" . $id . ", '" . $username . "', " . $email . ", '" . $password . "')";
         $result = mysqli_query($conn, $sql);
         if($result) {
             echo "<script>alert('新增成功！');</script>";
